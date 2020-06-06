@@ -45,22 +45,28 @@ Color::UInt8 Color::getAlpha() const
 
 void Color::setRed(Color::UInt32 r)
 {
-	using Bit = std::bitset<32>;
-
-	std::cout << "After : " << Bit(value).to_string() << "\n";
-
+	// Remember, the component red is
+	// localize in the side left,
+	// The schema is - R G B A -
+	// In r the schema is - 0 0 0 R -
+	// Need move R to left
+	// Each position (of 4 possibles)
+	// in the schema have a size of 8.
 	r <<= 24;
-
-	std::cout << "Value : " << Bit(r).to_string() << "\n";
-
+	// Clear the old value of component
+	// in r for that we can store a new
+	// value of component r.
+	// The schema is actual is - G B A 0 -
 	value <<= 8;
+	// However, with the above operation
+	// the schema is unordered, we have
+	// order tha schema.
 	value >>= 8;
-
-	std::cout << "Clear : " << Bit(value).to_string() << "\n";
-
+	// The operator "bitwise XOR (exclusive
+	// OR)" allow interchange the values of
+	// component r without affect the
+	// another components ( G B and A).
 	value ^= r;
-
-	std::cout << "Before: " << Bit(value).to_string() << "\n";
 }
 
 void Color::setGreen(Color::UInt32 g)
