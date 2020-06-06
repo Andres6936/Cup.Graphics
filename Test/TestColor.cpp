@@ -15,4 +15,14 @@ int main (int argc, char* argv[])
 	assert(color.getGreen() == 245);
 	assert(color.getBlue() == 132);
 	assert(color.getAlpha() == 255);
+
+	color.setRed(56);
+//	color.setGreen(87);
+//	color.setBlue(156);
+//	color.setAlpha(69);
+
+	assert(color.getRed() == 56);
+//	assert(color.getGreen() == 87);
+//	assert(color.getBlue() == 156);
+//	assert(color.getAlpha() == 69);
 }

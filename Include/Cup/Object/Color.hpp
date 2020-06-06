@@ -51,6 +51,14 @@ namespace Cup::Object
 
 		// Setters
 
+		void setRed(UInt32 r);
+
+		void setGreen(UInt32 g);
+
+		void setBlue(UInt32 b);
+
+		void setAlpha(UInt32 a);
+
 	};
 
 }
