@@ -71,7 +71,12 @@ void Color::setRed(Color::UInt32 r)
 
 void Color::setGreen(Color::UInt32 g)
 {
-	value += g << 16;
+	UInt32 r = getRed() << 24;
+	value <<= 16;
+	value >>= 16;
+	g <<= 16;
+	value ^= g;
+	value ^= r;
 }
 
 void Color::setBlue(Color::UInt32 b)
