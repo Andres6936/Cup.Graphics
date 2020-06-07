@@ -116,5 +116,7 @@ void Color::setBlue(Color::UInt32 b)
 
 void Color::setAlpha(Color::UInt32 a)
 {
-	value += a << 0;
+	value >>= 8;
+	value <<= 8;
+	value ^= a;
 }
