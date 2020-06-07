@@ -2,7 +2,6 @@
 
 #include <Cup/Object/Color.hpp>
 
-#include <iostream>
 #include <cassert>
 
 using namespace Cup::Object;
