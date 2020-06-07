@@ -116,7 +116,24 @@ void Color::setBlue(Color::UInt32 b)
 
 void Color::setAlpha(Color::UInt32 a)
 {
+	// The schema of parameter a is perfect
+	// that is: - 0 0 0 A -
+	// So that not is needed make operations
+	// with the parameter
+
+	// Clear the old value of alpha (aka: a)
 	value >>= 8;
+	// Sort the schema to - R G B 0 -
 	value <<= 8;
+
+	// The operator "bitwise XOR (exclusive
+	// OR)" allow interchange the values of
+	// component a without affect the
+	// another components ( R G and B).
+	// See:
+	// - R G B 0 - The schema of value
+	// - 0 0 0 A - The schema of parameter a
+	// Apply the operation xor the result is:
+	// - R G B A -
 	value ^= a;
 }
