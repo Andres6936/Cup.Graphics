@@ -82,12 +82,25 @@ void Color::setRed(Color::UInt32 r)
 
 void Color::setGreen(Color::UInt32 g)
 {
-
+	// Schema r is : - R 0 0 0 -
 	UInt32 r = getRed() << 24;
+	// Schema value: - B A 0 0 -
 	value <<= 16;
+	// Schema value: - 0 0 B A -
 	value >>= 16;
+	// Schema parameter g is : - 0 G 0 0 -
 	g <<= 16;
+
+	// - 0 0 B A - Schema value
+	// - 0 G 0 0 - Schema parameter g
+	// Result of operation
+	// - 0 G B A -
 	value ^= g;
+
+	// - 0 G B A - Schema value
+	// - R G B A - Schema r
+	// Result of operation
+	// - R G B A -
 	value ^= r;
 }
 
