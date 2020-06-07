@@ -48,10 +48,14 @@ void Color::setRed(Color::UInt32 r)
 	// Remember, the component red is
 	// localize in the side left,
 	// The schema is - R G B A -
-	// In r the schema is - 0 0 0 R -
-	// Need move R to left
+	// In the parameter r the schema
+	// is - 0 0 0 R -
+	// Need move R to left (aka: - R 0 0 0 -)
 	// Each position (of 4 possibles)
 	// in the schema have a size of 8.
+	// As we need move 3 position the total
+	// of bits to move is of
+	// 24 = 8 bits * 3 positions
 	r <<= 24;
 	// Clear the old value of component
 	// in r for that we can store a new
@@ -61,16 +65,24 @@ void Color::setRed(Color::UInt32 r)
 	// However, with the above operation
 	// the schema is unordered, we have
 	// order tha schema.
+	// It will be like that again
+	// as - 0 G B A -
 	value >>= 8;
 	// The operator "bitwise XOR (exclusive
 	// OR)" allow interchange the values of
 	// component r without affect the
 	// another components ( G B and A).
+	// See:
+	// - 0 G B A - The schema of value
+	// - R 0 0 0 - The schema of parameter r
+	// Apply the operation xor the result is:
+	// - R G B A -
 	value ^= r;
 }
 
 void Color::setGreen(Color::UInt32 g)
 {
+
 	UInt32 r = getRed() << 24;
 	value <<= 16;
 	value >>= 16;
