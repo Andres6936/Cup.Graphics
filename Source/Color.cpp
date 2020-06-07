@@ -1,17 +1,15 @@
-#include <bitset>
-#include <iostream>
 #include "Cup/Object/Color.hpp"
 
 using namespace Cup::Object;
 
 // Constructs
 
-Color::Color(UInt32 r, UInt32 g, UInt32 b) : Color(r, g, b, 255)
+Color::Color(const Color::UInt32 r, const Color::UInt32 g, const Color::UInt32 b) : Color(r, g, b, 255)
 {
 
 }
 
-Color::Color(UInt32 r, UInt32 g, UInt32 b, UInt32 a)
+Color::Color(const Color::UInt32 r, const Color::UInt32 g, const Color::UInt32 b, const Color::UInt32 a)
 {
 	value += r << 24;
 	value += g << 16;
@@ -114,7 +112,7 @@ void Color::setBlue(Color::UInt32 b)
 	value ^= a;
 }
 
-void Color::setAlpha(Color::UInt32 a)
+void Color::setAlpha(const Color::UInt32 a)
 {
 	// The schema of parameter a is perfect
 	// that is: - 0 0 0 A -
