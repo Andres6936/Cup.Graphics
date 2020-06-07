@@ -106,7 +106,12 @@ void Color::setGreen(Color::UInt32 g)
 
 void Color::setBlue(Color::UInt32 b)
 {
-	value += b << 8;
+	UInt32 a = getAlpha();
+	value >>= 16;
+	value <<= 16;
+	b <<= 8;
+	value ^= b;
+	value ^= a;
 }
 
 void Color::setAlpha(Color::UInt32 a)
