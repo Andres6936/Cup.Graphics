@@ -42,7 +42,7 @@ TARGET_LINK_LIBRARIES(<TARGET> PRIVATE Cup.Graphics)
 My proposal for using the library within your code is to use encapsulation.
 
 ```cxx
-using namespace Cup::Object;
+using namespace Cup::Graphics;
 
 Color color(233, 245, 132);
 
