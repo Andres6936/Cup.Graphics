@@ -4,7 +4,7 @@
 
 #include <cassert>
 
-using namespace Cup::Object;
+using namespace Cup::Graphics;
 
 int main (int argc, char* argv[])
 {
