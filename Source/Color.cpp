@@ -1,6 +1,6 @@
 #include "Cup/Object/Color.hpp"
 
-using namespace Cup::Object;
+using namespace Cup::Graphics;
 
 // Constructs
 
