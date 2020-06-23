@@ -5,7 +5,7 @@
 
 #include <cstdint>
 
-namespace Cup::Object
+namespace Cup::Graphics
 {
 
 	class Color
