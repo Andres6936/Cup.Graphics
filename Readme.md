@@ -14,12 +14,13 @@ This library is not designed for impressive performance
 when implementing the library), is designed to avoid duplicate code.
 
 ### How to Use
-With the arrival of CMake 14, a script was added that allows you to get
-from the internet, taking this into account the user [TheLartians](https://github.com/TheLartians)
-decided to write a script for CMake that acts as a
-packages. In my opinion, this marks a new step for C++ and CMake, allowing
-work with libraries that are downloaded and updated without direct intervention
-of the user.
+
+With the arrival of CMake 14, a script was added that allows to get 
+repositories from the Internet, taking into account this the user 
+[TheLartians](https://github.com/TheLartians) decided to write a script 
+for CMake that acts as a package manager. In my opinion, this marks a 
+new step for C++ and CMake, allowing work with libraries that are 
+downloaded and updated without direct intervention of the user.
 
 ### How to use
 To use this library, you need the script written by [TheLartians](https://github.com/TheLartians),
@@ -38,6 +39,9 @@ CPMAddPackage(
  
 TARGET_LINK_LIBRARIES(<TARGET> PRIVATE Cup.Graphics)
 ```
+
+- The directory `CMakeModules` should be created in case it does not exist.
+- `<TARGET>` must be replaced by the executable to which you will link.
 
 My proposal for using the library within your code is to use encapsulation.
 
