@@ -23,9 +23,9 @@ namespace Cup::Graphics
 
 		/**
 		 * The order of stored is:
-		 * Red Green Blue Alpha
+		 * | Red | Green | Blue | Alpha |
 		 * each component have 8 bits
-		 * in total 32 bits.
+		 * in total 32 bits (8 bits * 4 component).
 		 */
 		UInt32 value = 0;
 
