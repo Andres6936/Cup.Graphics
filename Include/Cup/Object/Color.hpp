@@ -46,29 +46,29 @@ namespace Cup::Graphics
 
 		Color() noexcept = default;
 
-		Color(std::uint32_t r, std::uint32_t g, std::uint32_t b);
+		Color(std::uint32_t r, std::uint32_t g, std::uint32_t b) noexcept;
 
-		Color(std::uint32_t r, std::uint32_t g, std::uint32_t b, std::uint32_t a);
+		Color(std::uint32_t r, std::uint32_t g, std::uint32_t b, std::uint32_t a) noexcept;
 
 		// Getters
 
-		std::uint8_t getRed() const;
+		std::uint8_t getRed() const noexcept;
 
-		std::uint8_t getGreen() const;
+		std::uint8_t getGreen() const noexcept;
 
-		std::uint8_t getBlue() const;
+		std::uint8_t getBlue() const noexcept;
 
-		std::uint8_t getAlpha() const;
+		std::uint8_t getAlpha() const noexcept;
 
 		// Setters
 
-		void setRed(std::uint32_t r);
+		void setRed(std::uint32_t r) noexcept;
 
-		void setGreen(std::uint32_t g);
+		void setGreen(std::uint32_t g) noexcept;
 
-		void setBlue(std::uint32_t b);
+		void setBlue(std::uint32_t b) noexcept;
 
-		void setAlpha(std::uint32_t a);
+		void setAlpha(std::uint32_t a) noexcept;
 
 	};
 

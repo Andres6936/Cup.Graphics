@@ -4,12 +4,12 @@ using namespace Cup::Graphics;
 
 // Constructs
 
-Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b) : Color(r, g, b, 255)
+Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b) noexcept : Color(r, g, b, 255)
 {
 
 }
 
-Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b, const std::uint32_t a)
+Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b, const std::uint32_t a) noexcept
 {
 	value += r << 24;
 	value += g << 16;
@@ -19,29 +19,29 @@ Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b
 
 // Getters
 
-std::uint8_t Color::getRed() const
+std::uint8_t Color::getRed() const noexcept
 {
 	return static_cast<std::uint8_t>(value >> 24);
 }
 
-std::uint8_t Color::getGreen() const
+std::uint8_t Color::getGreen() const noexcept
 {
 	return static_cast<std::uint8_t>(value >> 16);
 }
 
-std::uint8_t Color::getBlue() const
+std::uint8_t Color::getBlue() const noexcept
 {
 	return static_cast<std::uint8_t>(value >> 8);
 }
 
-std::uint8_t Color::getAlpha() const
+std::uint8_t Color::getAlpha() const noexcept
 {
 	return static_cast<std::uint8_t>(value >> 0);
 }
 
 // Setters
 
-void Color::setRed(std::uint32_t r)
+void Color::setRed(std::uint32_t r) noexcept
 {
 	// Remember, the component red is
 	// localize in the side left,
@@ -78,7 +78,7 @@ void Color::setRed(std::uint32_t r)
 	value ^= r;
 }
 
-void Color::setGreen(std::uint32_t g)
+void Color::setGreen(std::uint32_t g) noexcept
 {
 	// Schema r is : - R 0 0 0 -
 	std::uint32_t r = getRed() << 24;
@@ -102,7 +102,7 @@ void Color::setGreen(std::uint32_t g)
 	value ^= r;
 }
 
-void Color::setBlue(std::uint32_t b)
+void Color::setBlue(std::uint32_t b) noexcept
 {
 	std::uint32_t a = getAlpha();
 	value >>= 16;
@@ -112,7 +112,7 @@ void Color::setBlue(std::uint32_t b)
 	value ^= a;
 }
 
-void Color::setAlpha(const std::uint32_t a)
+void Color::setAlpha(const std::uint32_t a) noexcept
 {
 	// The schema of parameter a is perfect
 	// that is: - 0 0 0 A -
