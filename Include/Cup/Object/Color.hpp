@@ -15,8 +15,6 @@ namespace Cup::Graphics
 
 		// Definitions
 
-		using UInt32 = std::uint32_t;
-
 		using UInt8 = std::uint8_t;
 
 		// Fields
@@ -27,7 +25,7 @@ namespace Cup::Graphics
 		 * each component have 8 bits
 		 * in total 32 bits (8 bits * 4 component).
 		 */
-		UInt32 value = 0;
+		std::uint32_t value = 0;
 
 	public:
 
@@ -35,9 +33,9 @@ namespace Cup::Graphics
 
 		Color() noexcept = default;
 
-		Color(UInt32 r, UInt32 g, UInt32 b);
+		Color(std::uint32_t r, std::uint32_t g, std::uint32_t b);
 
-		Color(UInt32 r, UInt32 g, UInt32 b, UInt32 a);
+		Color(std::uint32_t r, std::uint32_t g, std::uint32_t b, std::uint32_t a);
 
 		// Getters
 
@@ -51,13 +49,13 @@ namespace Cup::Graphics
 
 		// Setters
 
-		void setRed(UInt32 r);
+		void setRed(std::uint32_t r);
 
-		void setGreen(UInt32 g);
+		void setGreen(std::uint32_t g);
 
-		void setBlue(UInt32 b);
+		void setBlue(std::uint32_t b);
 
-		void setAlpha(UInt32 a);
+		void setAlpha(std::uint32_t a);
 
 	};
 

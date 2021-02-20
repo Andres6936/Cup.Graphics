@@ -4,12 +4,12 @@ using namespace Cup::Graphics;
 
 // Constructs
 
-Color::Color(const Color::UInt32 r, const Color::UInt32 g, const Color::UInt32 b) : Color(r, g, b, 255)
+Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b) : Color(r, g, b, 255)
 {
 
 }
 
-Color::Color(const Color::UInt32 r, const Color::UInt32 g, const Color::UInt32 b, const Color::UInt32 a)
+Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b, const std::uint32_t a)
 {
 	value += r << 24;
 	value += g << 16;
@@ -41,7 +41,7 @@ Color::UInt8 Color::getAlpha() const
 
 // Setters
 
-void Color::setRed(Color::UInt32 r)
+void Color::setRed(std::uint32_t r)
 {
 	// Remember, the component red is
 	// localize in the side left,
@@ -78,10 +78,10 @@ void Color::setRed(Color::UInt32 r)
 	value ^= r;
 }
 
-void Color::setGreen(Color::UInt32 g)
+void Color::setGreen(std::uint32_t g)
 {
 	// Schema r is : - R 0 0 0 -
-	UInt32 r = getRed() << 24;
+	std::uint32_t r = getRed() << 24;
 	// Schema value: - B A 0 0 -
 	value <<= 16;
 	// Schema value: - 0 0 B A -
@@ -102,9 +102,9 @@ void Color::setGreen(Color::UInt32 g)
 	value ^= r;
 }
 
-void Color::setBlue(Color::UInt32 b)
+void Color::setBlue(std::uint32_t b)
 {
-	UInt32 a = getAlpha();
+	std::uint32_t a = getAlpha();
 	value >>= 16;
 	value <<= 16;
 	b <<= 8;
@@ -112,7 +112,7 @@ void Color::setBlue(Color::UInt32 b)
 	value ^= a;
 }
 
-void Color::setAlpha(const Color::UInt32 a)
+void Color::setAlpha(const std::uint32_t a)
 {
 	// The schema of parameter a is perfect
 	// that is: - 0 0 0 A -
