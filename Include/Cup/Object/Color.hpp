@@ -30,10 +30,6 @@ namespace Cup::Graphics
 
 	private:
 
-		// Definitions
-
-		using UInt8 = std::uint8_t;
-
 		// Fields
 
 		/**
@@ -56,13 +52,13 @@ namespace Cup::Graphics
 
 		// Getters
 
-		UInt8 getRed() const;
+		std::uint8_t getRed() const;
 
-		UInt8 getGreen() const;
+		std::uint8_t getGreen() const;
 
-		UInt8 getBlue() const;
+		std::uint8_t getBlue() const;
 
-		UInt8 getAlpha() const;
+		std::uint8_t getAlpha() const;
 
 		// Setters
 

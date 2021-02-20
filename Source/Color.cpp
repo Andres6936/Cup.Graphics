@@ -19,24 +19,24 @@ Color::Color(const std::uint32_t r, const std::uint32_t g, const std::uint32_t b
 
 // Getters
 
-Color::UInt8 Color::getRed() const
+std::uint8_t Color::getRed() const
 {
-	return static_cast<UInt8>(value >> 24);
+	return static_cast<std::uint8_t>(value >> 24);
 }
 
-Color::UInt8 Color::getGreen() const
+std::uint8_t Color::getGreen() const
 {
-	return static_cast<UInt8>(value >> 16);
+	return static_cast<std::uint8_t>(value >> 16);
 }
 
-Color::UInt8 Color::getBlue() const
+std::uint8_t Color::getBlue() const
 {
-	return static_cast<UInt8>(value >> 8);
+	return static_cast<std::uint8_t>(value >> 8);
 }
 
-Color::UInt8 Color::getAlpha() const
+std::uint8_t Color::getAlpha() const
 {
-	return static_cast<UInt8>(value >> 0);
+	return static_cast<std::uint8_t>(value >> 0);
 }
 
 // Setters
